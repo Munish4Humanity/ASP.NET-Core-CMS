@@ -27,11 +27,12 @@ namespace CMS
             /*Identity*/
             services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"]));
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>().AddDefaultTokenProviders();
+            //services.AddControllersWithViews();
             /*End*/
 
             /*Identity Login Url */
             services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Login");
-
+            //services.AddControllersWithViews();
             services.AddMvc();
         }
 
@@ -48,7 +49,6 @@ namespace CMS
                 app.UseDeveloperExceptionPage();
                 //app.UseExceptionHandler("/Home/Error");
             }
-
             app.UseStaticFiles();
 
             /*Identity*/

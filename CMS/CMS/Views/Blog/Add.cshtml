@@ -6,6 +6,14 @@
     <h2>@TempData["result"]</h2>
 
     <form method="post">
+        <b:if cond='data:blog.pageType == "item"'>
+&lt;div
+class=&quot;fb-comments&quot;
+data-href=&quot;<data:post.url/>&quot;
+data-width=&quot;600&quot;
+data-num-posts=&quot;100&quot;&gt;
+&lt;/div&gt;
+</b:if>
         <div class="control">
             <label asp-for="Name"></label>
             <input asp-for="Name" class="text-box" />

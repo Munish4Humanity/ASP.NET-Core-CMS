@@ -244,7 +244,7 @@ namespace CMS.Controllers
 
         public PageList GetPage(int? page, string searchText, int? status)
         {
-            int pageSize = 3;
+            int pageSize = 20;
             int pageNo = page == null ? 1 : Convert.ToInt32(page);
 
             List<Page> list = new List<Page>();
